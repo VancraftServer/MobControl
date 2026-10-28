@@ -1,0 +1,30 @@
+name: MobControl
+main: world.bentobox.mobcontrol.MobControlAddon
+version: 1.0.0
+# 这是「最低要求的 BentoBox 版本」，不是本附属的版本
+api-version: 3.0.0
+description: 让玩家在 GUI 里开关自己岛屿上指定怪物的自然生成
+repository: 'YourName/MobControl'
+metrics: false
+authors:
+  - YourName
+softdepend:
+  - BSkyBlock
+  - AcidIsland
+  - CaveBlock
+  - SkyGrid
+permissions:
+  mobcontrol.use:
+    description: 允许用 /mobcontrol 打开岛屿怪物生成控制面板
+    default: true
+  mobcontrol.admin:
+    description: 允许用 /mobcontrol 开关任意岛屿的怪物生成
+    default: op
+  # [gamemode] 会被 BentoBox 换成每个游戏模式的前缀：
+  # BSkyBlock → bskyblock.mobcontrol.use，AcidIsland → acidisland.mobcontrol.use …
+  '[gamemode].mobcontrol.use':
+    description: 允许用 /is mob 打开岛屿怪物生成控制面板
+    default: true
+  '[gamemode].mobcontrol.admin':
+    description: 允许用 /is mob 开关任意岛屿的怪物生成
+    default: op

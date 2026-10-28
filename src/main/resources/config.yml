@@ -1,0 +1,33 @@
+# MobControl 配置文件
+#
+# mobs: 允许玩家自己开关的怪物列表
+#   名字就是 Bukkit 的 EntityType 名称，不区分大小写，例如:
+#   SLIME, ZOMBIE, SKELETON, CREEPER, SPIDER, ENDERMAN, WITCH, PHANTOM
+#   只有这里写了的怪物才会出现在面板里；默认只写了史莱姆。
+mobs:
+  - SLIME
+
+gui:
+  # 面板标题，支持 & 颜色码
+  title: '&8岛屿怪物生成控制'
+  # 面板行数（1-6）
+  rows: 3
+  # 允许生成时图标下面的说明
+  allowed-lore: '&a当前状态: &2允许生成'
+  # 禁止生成时图标下面的说明
+  blocked-lore: '&c当前状态: &4禁止生成'
+  # 追加在说明最后的一行提示
+  click-hint: '&7点击切换'
+
+spawn:
+  # true  = 只拦截自然生成（刷怪笼、刷怪蛋、史莱姆分裂等不受影响）
+  # false = 拦截该怪物在这个岛上的所有生成来源
+  only-natural: true
+
+# 所有消息都支持 & 颜色码，%mob% 会被替换成怪物名字
+messages:
+  no-island: '&c你还没有岛屿。'
+  not-your-island: '&c这不是你的岛屿，你没有权限修改。'
+  no-mobs: '&c服务端没有配置任何可切换的怪物。'
+  toggled-on: '&a[怪物控制] 已允许 &e%mob% &a在你的岛屿生成。'
+  toggled-off: '&c[怪物控制] 已禁止 &e%mob% &c在你的岛屿生成。'
